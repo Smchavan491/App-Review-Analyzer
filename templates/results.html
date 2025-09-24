@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Analysis Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 700px;
+      width: 100%;
+    }
+    h1 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+    p {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+      color: #555;
+    }
+    strong {
+      color: #222;
+    }
+    img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    a {
+      display: inline-block;
+      margin-top: 2rem;
+      text-decoration: none;
+      background: #2575fc;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+    a:hover {
+      background: #6a11cb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Review Analysis Result</h1>
+
+    <p><strong>Recommendation:</strong> {{ recommendation }}</p>
+    <p><strong>Average Rating:</strong> {{ rating }}</p>
+
+    <h2>Review Sentiment Distribution</h2>
+    <img src="{{ url_for('static', filename='pics/result_plot.png') }}" alt="Sentiment Plot">
+
+    <a href="/">🔄 Try another app</a>
+  </div>
+</body>
+</html>
